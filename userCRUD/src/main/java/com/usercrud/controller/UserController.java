@@ -8,17 +8,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.usercrud.dao.UserRepository;
 import com.usercrud.entity.User;
 import com.usercrud.service.UserService;
-
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.PutMapping;
 
 
 
@@ -34,7 +32,6 @@ public class UserController {
 	@PostMapping(value="/register")
 	public ResponseEntity<?> register(@RequestBody User user) {
 		//TODO: process POST request
-		
 		return ResponseEntity.status(HttpStatus.OK).body(service.register(user));
 	}
 	
